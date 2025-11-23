@@ -1,23 +1,42 @@
-// @flow strict
-import Link from 'next/link';
-import { CgGitFork } from "react-icons/cg";
-import { IoStar } from "react-icons/io5";
+'use client';
 
-function Footer() {
+import Link from 'next/link';
+import styles from './footer.module.scss';
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div className="relative border-t bg-[#0d1224] border-[#353951] text-white">
-      <div className="mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] py-6 lg:py-10">
-        <div className="flex justify-center -z-40">
-          <div className="absolute top-0 h-[1px] w-1/2  bg-gradient-to-r from-transparent via-violet-500 to-transparent"></div>
-        </div>
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <p className="text-sm">
-            Copy Rights © <Link target="_blank" href="https://www.linkedin.com/in/motasem-sakr" className="text-[#16f2b3]">Motasem Sakr 2024</Link>
-          </p>
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div className={styles.logo}>MOTASEM SAKR</div>
+          
+          <ul className={styles.links}>
+            <li>
+              <Link href="/#about" className={styles.link}>About</Link>
+            </li>
+            <li>
+              <Link href="/#experience" className={styles.link}>Experience</Link>
+            </li>
+            <li>
+              <Link href="/#skills" className={styles.link}>Skills</Link>
+            </li>
+            <li>
+              <Link href="/#projects" className={styles.link}>Projects</Link>
+            </li>
+            <li>
+              <Link href="/#contact" className={styles.link}>Contact</Link>
+            </li>
+          </ul>
+          
+          <div className={styles.divider}></div>
+          
+          <div className={styles.copyright}>
+            © {currentYear} <Link href="https://www.linkedin.com/in/motasem-sakr" target="_blank" rel="noopener noreferrer">Motasem Sakr</Link>. All rights reserved.
+          </div>
         </div>
       </div>
-    </div >
+    </footer>
   );
-};
-
-export default Footer;
+}

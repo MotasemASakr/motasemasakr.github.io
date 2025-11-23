@@ -1,44 +1,103 @@
-// @flow strict
+'use client';
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import styles from './navbar.module.scss';
 
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
-function Navbar() {
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      
+      // Detect active section
+      const sections = ['about', 'experience', 'skills', 'publications', 'projects', 'contact'];
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { href: "/#about", label: "About", id: "about" },
+    { href: "/#experience", label: "Experience", id: "experience" },
+    { href: "/#skills", label: "Skills", id: "skills" },
+    { href: "/#publications", label: "Publications", id: "publications" },
+    { href: "/#projects", label: "Projects", id: "projects" },
+    { href: "/#contact", label: "Contact", id: "contact" },
+  ];
+
   return (
-    <nav className="bg-transparent">
-      <div className="flex items-center justify-between py-5">
-        <div className="flex flex-shrink-0 items-center">
-          <Link
-            href="/"
-            className=" text-[#16f2b3] text-3xl font-bold">
-            Motasem Sakr
-          </Link>
-        </div>
+    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
+      <div className={styles.container}>
+        {/* Logo with neural connection */}
+        <Link href="/" className={styles.logo}>
+          <div className={styles.logoNode}>
+            <div className={styles.nodePulse} />
+          </div>
+          <span className={styles.logoText}>
+            <span className={styles.bracket}>{'<'}</span>
+            MS
+            <span className={styles.bracket}>{'/>'}</span>
+          </span>
+        </Link>
 
-        <ul className="mt-4 flex h-screen max-h-0 w-full flex-col items-start text-sm opacity-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 md:opacity-100" id="navbar-default">
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#about">
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">ABOUT</div>
-            </Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#experience"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">EXPERIENCE</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#skills"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">SKILLS</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#education"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">EDUCATION</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/blog"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">BLOGS</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#projects"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">PROJECTS</div></Link>
-          </li>
+        {/* Mobile menu button */}
+        <button 
+          className={`${styles.mobileMenuButton} ${isOpen ? styles.open : ''}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* Navigation menu */}
+        <ul className={`${styles.navMenu} ${isOpen ? styles.open : ''}`}>
+          {navItems.map((item, index) => (
+            <li key={item.href} className={styles.navItem}>
+              <Link 
+                href={item.href} 
+                className={`${styles.navLink} ${activeSection === item.id ? styles.active : ''}`}
+                onClick={() => setIsOpen(false)}
+              >
+                <span className={styles.linkIndex}>
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className={styles.linkText}>{item.label}</span>
+                <div className={styles.linkIndicator} />
+              </Link>
+            </li>
+          ))}
         </ul>
+
+        {/* Connection lines overlay */}
+        <svg className={styles.connectionOverlay} viewBox="0 0 100 10">
+          <line 
+            x1="0" 
+            y1="5" 
+            x2="100" 
+            y2="5" 
+            stroke="rgba(139, 92, 246, 0.2)" 
+            strokeWidth="0.5"
+            strokeDasharray="2,2"
+          />
+        </svg>
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}

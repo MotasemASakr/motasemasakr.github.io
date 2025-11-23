@@ -1,0 +1,743 @@
+.contactSection {
+  position: relative;
+  padding: 100px 0 80px;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+
+.sectionHeader {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.sectionId {
+  display: block;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: rgba(139, 92, 246, 0.6);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.sectionTitle {
+  font-size: 56px;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    gap: 10px;
+  }
+}
+
+.titleBracket {
+  color: rgba(139, 92, 246, 0.8);
+  font-family: 'Courier New', monospace;
+}
+
+.titleText {
+  background: linear-gradient(135deg, #ffffff 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 4px;
+
+  @media (max-width: 768px) {
+    letter-spacing: 2px;
+  }
+}
+
+.subtitle {
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin: 60px 0;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+.terminalCard {
+  background: rgba(16, 16, 29, 0.9);
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+
+  &:hover {
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 15px 50px rgba(139, 92, 246, 0.3);
+    transform: translateY(-5px);
+  }
+}
+
+.terminalHeader {
+  background: rgba(139, 92, 246, 0.1);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.terminalDots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminalTitle {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.terminalBody {
+  padding: 30px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.terminalLine {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.prompt {
+  color: #8b5cf6;
+  font-weight: 700;
+}
+
+.command {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.terminalOutput {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.outputLine {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.outputIcon {
+  color: #8b5cf6;
+  font-size: 16px;
+}
+
+.emailLink {
+  color: #a78bfa;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #8b5cf6;
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    color: #ffffff;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.locationText {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cursor {
+  display: inline-block;
+  color: #8b5cf6;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.connectionHub {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 16, 29, 0.6);
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  overflow: visible;
+  transition: all 0.4s ease;
+
+  &:hover {
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 15px 50px rgba(139, 92, 246, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    height: 350px;
+  }
+}
+
+.hubCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centerNode {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.nodePulse {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.8);
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+}
+
+.nodeRing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nodeLabel {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(139, 92, 246, 0.9);
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.8);
+}
+
+.socialNodes {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.socialNode {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y)));
+  animation: floatIn 0.6s ease-out var(--delay) both;
+  text-decoration: none;
+
+  &.active {
+    z-index: 10;
+
+    .nodeOrbit {
+      transform: scale(1.3) rotate(360deg);
+      box-shadow: 
+        0 0 30px var(--color),
+        inset 0 0 20px var(--color);
+    }
+
+    .nodeLabel {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nodeGlow {
+      opacity: 0.8;
+    }
+  }
+
+  @media (max-width: 768px) {
+    --x: calc(var(--x) * 0.5) !important;
+    --y: calc(var(--y) * 0.5) !important;
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1);
+  }
+}
+
+.connectionLine {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nodeContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.nodeOrbit {
+  width: 70px;
+  height: 70px;
+  border: 2px solid;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 16, 29, 0.95);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.nodeIcon {
+  font-size: 32px;
+  color: var(--color);
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+.nodeGlow {
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(20px);
+  transition: opacity 0.4s ease;
+}
+
+.nodeLabel {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  padding: 5px 12px;
+  background: rgba(16, 16, 29, 0.95);
+  border: 1px solid var(--color);
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+}
+
+.statusPanel {
+  background: rgba(16, 16, 29, 0.9);
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+
+  &:hover {
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 15px 50px rgba(139, 92, 246, 0.3);
+    transform: translateY(-5px);
+  }
+}
+
+.panelHeader {
+  background: rgba(139, 92, 246, 0.1);
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.panelTitle {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: rgba(139, 92, 246, 0.9);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #27c93f;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  background: #27c93f;
+  border-radius: 50%;
+  animation: blink 2s ease-in-out infinite;
+  box-shadow: 0 0 10px #27c93f;
+}
+
+.panelContent {
+  padding: 30px;
+}
+
+.statusItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.statusKey {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.statusValue {
+  color: #8b5cf6;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.dataVisualization {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.vizLabel {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.vizBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 80px;
+}
+
+.vizBar {
+  flex: 1;
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.8) 0%, rgba(139, 92, 246, 0.3) 100%);
+  border-radius: 2px;
+  animation: barGrow 0.6s ease-out both;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+@keyframes barGrow {
+  from {
+    height: 0;
+  }
+}
+
+.panelFooter {
+  padding: 15px 25px;
+  background: rgba(139, 92, 246, 0.05);
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.encryptionBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(139, 92, 246, 0.8);
+  letter-spacing: 0.5px;
+}
+
+.lockIcon {
+  font-size: 14px;
+}
+
+.ctaSection {
+  margin: 80px 0;
+  padding: 60px;
+  background: rgba(16, 16, 29, 0.8);
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, transparent 100%);
+    opacity: 0.5;
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 30px;
+  }
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
+}
+
+.ctaTitle {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.ctaBracket {
+  color: rgba(139, 92, 246, 0.8);
+  font-family: 'Courier New', monospace;
+  font-size: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+.ctaText {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 40px;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 45px;
+  background: transparent;
+  border: 2px solid rgba(139, 92, 246, 0.6);
+  color: #a78bfa;
+  font-family: 'Courier New', monospace;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+
+  &:hover {
+    color: #ffffff;
+    border-color: #8b5cf6;
+    box-shadow: 
+      0 0 40px rgba(139, 92, 246, 0.6),
+      inset 0 0 40px rgba(139, 92, 246, 0.2);
+    transform: translateY(-3px);
+
+    .buttonBg {
+      transform: translateX(0);
+    }
+
+    .buttonIcon {
+      animation: arrowMove 0.6s ease-in-out infinite;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px 35px;
+    font-size: 13px;
+  }
+}
+
+.buttonText {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.buttonIcon {
+  font-size: 18px;
+}
+
+@keyframes arrowMove {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.buttonBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(139, 92, 246, 0.1) 100%);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+.sectionFooter {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.gridOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  gap: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gridLine {
+  height: 100%;
+  border-right: 1px solid rgba(139, 92, 246, 0.5);
+}
+

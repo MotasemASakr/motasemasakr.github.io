@@ -3,31 +3,59 @@
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa6";
 
-const DEFAULT_BTN_CLS =
-  "fixed bottom-8 right-6 z-50 flex items-center rounded-full bg-gradient-to-r from-pink-500 to-violet-600 p-4 hover:text-xl transition-all duration-300 ease-out";
-const SCROLL_THRESHOLD = 50;
-
 const ScrollToTop = () => {
-  const [btnCls, setBtnCls] = useState(DEFAULT_BTN_CLS);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > SCROLL_THRESHOLD) {
-        setBtnCls(DEFAULT_BTN_CLS.replace(" hidden", ""));
-      } else {
-        setBtnCls(DEFAULT_BTN_CLS + " hidden");
-      }
+      setIsVisible(window.scrollY > 300);
     };
+    
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll, { passive: true });
     };
   }, []);
 
-  const onClickBtn = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
-    <button className={btnCls} onClick={onClickBtn}>
+    <button
+      onClick={scrollToTop}
+      style={{
+        position: 'fixed',
+        bottom: '2rem',
+        right: '2rem',
+        zIndex: 1000,
+        width: '50px',
+        height: '50px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'linear-gradient(135deg, #00f0ff, #a855f7)',
+        border: 'none',
+        borderRadius: '50%',
+        color: '#ffffff',
+        fontSize: '1.2rem',
+        cursor: 'pointer',
+        boxShadow: '0 5px 20px rgba(0, 240, 255, 0.4)',
+        transition: 'all 0.3s ease',
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.8)',
+        pointerEvents: isVisible ? 'all' : 'none',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'translateY(-5px) scale(1.1)';
+        e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 240, 255, 0.6)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'translateY(0) scale(1)';
+        e.currentTarget.style.boxShadow = '0 5px 20px rgba(0, 240, 255, 0.4)';
+      }}
+      aria-label="Scroll to top"
+    >
       <FaArrowUp />
     </button>
   );

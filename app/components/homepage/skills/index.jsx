@@ -1,71 +1,197 @@
-// @flow strict
+'use client';
 
-import { skillsData } from "@/utils/data/skills";
-import { skillsImage } from "@/utils/skill-image";
-import Image from "next/image";
-import Marquee from "react-fast-marquee";
+import { skillsImage } from '@/utils/skill-image';
+import Image from 'next/image';
+import styles from './skills.module.scss';
+import { useState, useEffect } from 'react';
 
-function Skills() {
+const skillCategories = [
+  {
+    title: 'Programming',
+    color: '#8b5cf6',
+    skills: ['C++', 'Python', 'CUDA'],
+    icon: '💻'
+  },
+  {
+    title: 'ML Frameworks',
+    color: '#a78bfa',
+    skills: ['Pytorch', 'Tensorflow'],
+    icon: '🧠'
+  },
+  {
+    title: 'HDL & ASIC Design',
+    color: '#c084fc',
+    skills: ['SystemVerilog', 'Verilog'],
+    icon: '⚡'
+  },
+  {
+    title: 'Web Development',
+    color: '#d8b4fe',
+    skills: ['Django', 'Flask', 'MongoDB', 'NodeJS', 'JavaScript'],
+    icon: '🌐'
+  }
+];
+
+export default function SkillsSection() {
+  const [activeCategory, setActiveCategory] = useState(null);
+  const [hoveredSkill, setHoveredSkill] = useState(null);
+  const [isMounted, setIsMounted] = useState(false);
+  
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <div id="skills" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
-      <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
-
-      <div className="flex justify-center -translate-y-[1px]">
-        <div className="w-3/4">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" />
+    <section id="skills" className={styles.skillsSection}>
+      <div className={styles.container}>
+        <div className={styles.sectionHeader}>
+          <span className={styles.sectionId}>{'<section id="skills">'}</span>
+          <h2 className={styles.sectionTitle}>
+            <span className={styles.titleBracket}>{'{'}</span>
+            <span className={styles.titleText}> TECH_ARSENAL </span>
+            <span className={styles.titleBracket}>{'}'}</span>
+          </h2>
+          <p className={styles.subtitle}>
+            {'// '} Mastered technologies powering next-gen AI systems
+          </p>
         </div>
-      </div>
 
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Skills
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-        </div>
-      </div>
-
-      <div className="w-full my-12">
-        <Marquee
-          gradient={false}
-          speed={80}
-          pauseOnHover={true}
-          pauseOnClick={true}
-          delay={0}
-          play={true}
-          direction="left"
-        >
-          {skillsData.map((skill, id) => (
-            <div className="w-36 min-w-fit h-fit flex flex-col items-center justify-center transition-all duration-500 m-3 sm:m-5 rounded-lg group relative hover:scale-[1.15] cursor-pointer"
-              key={id}>
-              <div className="h-full w-full rounded-lg border border-[#1f223c] bg-[#11152c] shadow-none shadow-gray-50 group-hover:border-violet-500 transition-all duration-500">
-                <div className="flex -translate-y-[1px] justify-center">
-                  <div className="w-3/4">
-                    <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
-                  </div>
+        <div className={styles.skillsGrid}>
+          {skillCategories.map((category, catIndex) => (
+            <div
+              key={catIndex}
+              className={`${styles.categoryCard} ${activeCategory === catIndex ? styles.active : ''}`}
+              onMouseEnter={() => setActiveCategory(catIndex)}
+              onMouseLeave={() => setActiveCategory(null)}
+            >
+              {/* Card header */}
+              <div className={styles.cardHeader}>
+                <div className={styles.categoryIcon} style={{ borderColor: category.color }}>
+                  <span>{category.icon}</span>
+                  <div className={styles.iconGlow} style={{ background: category.color }} />
                 </div>
-                <div className="flex flex-col items-center justify-center gap-3 p-6">
-                  <div className="h-8 sm:h-10">
-                    <Image
-                      src={skillsImage(skill)?.src}
-                      alt={skill}
-                      width={40}
-                      height={40}
-                      className="h-full w-auto rounded-lg"
-                    />
+                
+                <div className={styles.categoryInfo}>
+                  <h3 className={styles.categoryTitle} style={{ color: category.color }}>
+                    {category.title}
+                  </h3>
+                  <div className={styles.skillCount}>
+                    <span className={styles.countBracket}>{'['}</span>
+                    <span className={styles.countValue}>{category.skills.length}</span>
+                    <span className={styles.countBracket}>{']'}</span>
+                    <span className={styles.countLabel}>_skills</span>
                   </div>
-                  <p className="text-white text-sm sm:text-lg">
-                    {skill}
-                  </p>
                 </div>
               </div>
+
+              {/* Connection nodes */}
+              <svg className={styles.connectionWeb} viewBox="0 0 100 100">
+                {category.skills.map((_, i) => {
+                  const angle = (i / category.skills.length) * Math.PI * 2 - Math.PI / 2;
+                  const x = 50 + Math.cos(angle) * 35;
+                  const y = 50 + Math.sin(angle) * 35;
+                  return (
+                    <line
+                      key={i}
+                      x1="50"
+                      y1="50"
+                      x2={x}
+                      y2={y}
+                      className={styles.webLine}
+                      style={{ stroke: category.color }}
+                    />
+                  );
+                })}
+                <circle cx="50" cy="50" r="5" fill={category.color} opacity="0.8" />
+              </svg>
+
+              {/* Skills display */}
+              <div className={styles.skillsContainer}>
+                {category.skills.map((skill, skillIndex) => {
+                  const angle = (skillIndex / category.skills.length) * Math.PI * 2 - Math.PI / 2;
+                  const radius = 120;
+                  const x = Math.cos(angle) * radius;
+                  const y = Math.sin(angle) * radius;
+                  
+                  return (
+                    <div
+                      key={skillIndex}
+                      className={`${styles.skillNode} ${hoveredSkill === `${catIndex}-${skillIndex}` ? styles.hovered : ''}`}
+                      style={{
+                        '--x': `${x}px`,
+                        '--y': `${y}px`,
+                        '--delay': `${skillIndex * 0.1}s`
+                      }}
+                      onMouseEnter={() => setHoveredSkill(`${catIndex}-${skillIndex}`)}
+                      onMouseLeave={() => setHoveredSkill(null)}
+                    >
+                      <div className={styles.skillOrbit} style={{ borderColor: category.color }}>
+                        <div className={styles.skillCore}>
+                          <div className={styles.skillImage}>
+                            <Image
+                              src={skillsImage(skill)}
+                              alt={skill}
+                              width={40}
+                              height={40}
+                            />
+                          </div>
+                          <div className={styles.skillGlow} style={{ background: category.color }} />
+                        </div>
+                      </div>
+                      
+                      <div className={styles.skillLabel} style={{ borderColor: category.color }}>
+                        <span>{skill}</span>
+                      </div>
+
+                      {/* Skill level bars */}
+                      <div className={styles.skillMetrics}>
+                        {[1, 2, 3, 4, 5].map((bar) => (
+                          <div
+                            key={bar}
+                            className={styles.metricBar}
+                            style={{
+                              background: category.color,
+                              opacity: bar <= 4 ? 0.8 : 0.2
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Category stats */}
+              <div className={styles.categoryStats}>
+                <div className={styles.statBar} style={{ background: `linear-gradient(90deg, ${category.color}, transparent)` }} />
+                <div className={styles.statInfo}>
+                  <span className={styles.statLabel}>mastery_level:</span>
+                  <span className={styles.statValue} style={{ color: category.color }}>
+                    {[95, 92, 88, 90][catIndex]}%
+                  </span>
+                </div>
+              </div>
+
+              {/* Hover effect overlay */}
+              <div className={styles.cardOverlay} style={{ background: `linear-gradient(135deg, ${category.color}15, transparent)` }} />
             </div>
           ))}
-        </Marquee>
-      </div>
-    </div>
-  );
-};
+        </div>
 
-export default Skills;
+        {/* Central hub visualization */}
+        <div className={styles.centralHub}>
+          <div className={styles.hubCore}>
+            <div className={styles.hubPulse} />
+            <div className={styles.hubRing} />
+            <div className={styles.hubRing} style={{ animationDelay: '1s' }} />
+            <span className={styles.hubLabel}>CORE</span>
+          </div>
+        </div>
+
+        <div className={styles.sectionFooter}>
+          <span className={styles.sectionId}>{'</section>'}</span>
+        </div>
+      </div>
+    </section>
+  );
+}
