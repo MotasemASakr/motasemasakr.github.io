@@ -24,29 +24,20 @@ export default function PasswordGate({ children }) {
     setError('');
     setIsSubmitting(true);
 
-    try {
-      const response = await fetch('/api/auth', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ password }),
-      });
+    // Client-side password validation (works with static export)
+    const SITE_PASSWORD = '1234567';
 
-      const data = await response.json();
-
-      if (data.success) {
+    // Simulate a brief delay for better UX
+    setTimeout(() => {
+      if (password === SITE_PASSWORD) {
         sessionStorage.setItem('siteAuth', 'true');
         setIsAuthenticated(true);
       } else {
         setError('Incorrect password. Please try again.');
         setPassword('');
       }
-    } catch (err) {
-      setError('An error occurred. Please try again.');
-    } finally {
       setIsSubmitting(false);
-    }
+    }, 500);
   };
 
   if (loading) {
