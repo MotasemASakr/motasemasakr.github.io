@@ -47,7 +47,7 @@ export default function Contact() {
           </div>
           <h2 className={styles.title}>Let&apos;s Connect</h2>
           <p className={styles.subtitle}>
-            Interested in full-stack AI systems? Let&apos;s talk about building the future.
+            Interested in chip design and AI systems? Let&apos;s talk about building the future.
           </p>
         </motion.div>
 

@@ -122,7 +122,7 @@ export default function Layer3Impact() {
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <h3 className={styles.valueTitle}>Full-Stack AI Ownership</h3>
+            <h3 className={styles.valueTitle}>Silicon-to-Agent Ownership</h3>
             <p className={styles.valueDescription}>
               Rare ability to move the needle across the entire AI pipeline: from silicon design and fabrication,
               through model training and optimization, to agent orchestration and production deployment.
