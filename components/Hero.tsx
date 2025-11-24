@@ -29,7 +29,7 @@ export default function Hero() {
   }
 
   const pillars = [
-    { label: 'ASIC Performance', layer: 0, color: 'var(--layer-0)', description: 'Hardware-Efficient Accelerators' },
+    { label: 'ASIC Performance', layer: 0, color: 'var(--layer-0)', description: 'Hardware-Efficient Accelerators', icon: '🔲' },
     { label: 'Model Efficiency', layer: 1, color: 'var(--layer-1)', description: 'Fine-tuned LLMs & Training' },
     { label: 'Agentic Systems', layer: 2, color: 'var(--layer-2)', description: 'Multi-Agent Orchestration' },
   ]
