@@ -67,6 +67,7 @@ export default function Navigation() {
           className={styles.logo}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => scrollToSection('hero')}
         >
           <span className={styles.logoText}>MOTASEM SAKR</span>
         </motion.div>
