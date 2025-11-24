@@ -6,7 +6,7 @@ import styles from './Navigation.module.scss'
 
 const navItems = [
   { id: 'hero', label: 'Context', layer: null },
-  { id: 'stack', label: 'Stack', layer: null },
+  { id: 'stack', label: 'Chip-Agent Stack', layer: null },
   { id: 'layer0', label: 'Layer 0 · Silicon', layer: 0 },
   { id: 'layer1', label: 'Layer 1 · Models', layer: 1 },
   { id: 'layer2', label: 'Layer 2 · Agents', layer: 2 },
@@ -64,7 +64,6 @@ export default function Navigation() {
           whileTap={{ scale: 0.95 }}
         >
           <span className={styles.logoText}>MOTASEM SAKR</span>
-          <span className={styles.logoSubtext}>Chip→Agent Stack</span>
         </motion.div>
 
         <div className={styles.navItems}>
