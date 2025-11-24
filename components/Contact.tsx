@@ -42,8 +42,8 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
         >
           <div className={styles.badge}>
-            <span className={styles.badgeIcon}>🔌</span>
-            <span>Interface</span>
+            <span className={styles.badgeIcon}>📧</span>
+            <span>Contact</span>
           </div>
           <h2 className={styles.title}>Let&apos;s Connect</h2>
           <p className={styles.subtitle}>

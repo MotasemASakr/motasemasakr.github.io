@@ -51,8 +51,8 @@ export default function Publications() {
           transition={{ duration: 0.8 }}
         >
           <div className={styles.badge}>
-            <span className={styles.badgeIcon}>📡</span>
-            <span>Research Signals</span>
+            <span className={styles.badgeIcon}>📚</span>
+            <span>Research Publications</span>
           </div>
           <h2 className={styles.title}>Publications</h2>
           <p className={styles.subtitle}>

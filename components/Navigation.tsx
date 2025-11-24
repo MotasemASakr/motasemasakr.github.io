@@ -12,8 +12,8 @@ const navItems = [
   { id: 'layer0', label: 'Silicon', layer: 0, icon: 'chip' },
   { id: 'layer1', label: 'Models', layer: 1, icon: '🧠' },
   { id: 'layer2', label: 'Agents', layer: 2, icon: '🤖' },
-  { id: 'publications', label: 'Publications', layer: null, icon: '📄' },
-  { id: 'contact', label: 'Contact', layer: null, icon: '✉️' },
+  { id: 'publications', label: 'Publications', layer: null, icon: '📚' },
+  { id: 'contact', label: 'Contact', layer: null, icon: '📧' },
 ]
 
 export default function Navigation() {
