@@ -129,7 +129,7 @@ export default function Layer3Impact() {
             </p>
             <div className={styles.valuePoints}>
               <div className={styles.valuePoint}>
-                <div className={styles.valuePointIcon}>⚙️</div>
+                <div className={styles.valuePointIcon}>💠</div>
                 <div className={styles.valuePointText}>
                   <strong>Hardware</strong>
                   <span>10+ chips fabricated, 7+ years silicon-to-software pipeline experience in Magnificent 7</span>

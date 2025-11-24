@@ -45,7 +45,7 @@ export default function Layer0Silicon() {
           transition={{ duration: 0.8 }}
         >
           <div className={styles.layerBadge} data-layer="0">
-            <span className={styles.badgeIcon}>⚙️</span>
+            <span className={styles.badgeIcon}>💠</span>
             <span className={styles.badgeText}>Layer 0</span>
           </div>
           <h2 className={styles.title}>Silicon & Hardware</h2>

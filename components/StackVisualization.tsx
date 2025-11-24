@@ -14,7 +14,7 @@ export default function StackVisualization() {
       description: 'ASIC Design & Hardware Acceleration',
       color: '#ff006e',
       metrics: ['10+ ASIC Chips', 'TSMC 65nm/110nm', 'MAC Engines', 'Deflate Accelerators'],
-      icon: '🔲'
+      icon: '💠'
     },
     {
       id: 1,
