@@ -27,7 +27,7 @@ export default function Layer0Silicon() {
       metrics: ['ARM Core', 'RISCV', 'Image Sensor']
     },
     {
-      title: '4 Digital ASIC Chips',
+      title: '10+ Industry-Level ASIC Chips',
       tech: 'Full Fabrication',
       description: 'Led complete design and fabrication cycle using TSMC 65nm and LF 110nm technologies',
       metrics: ['TSMC 65nm', 'LF 110nm', 'Production Grade']
@@ -71,20 +71,16 @@ export default function Layer0Silicon() {
             </p>
             <div className={styles.achievements}>
               <div className={styles.achievement}>
+                <div className={styles.achievementValue}>10+</div>
+                <div className={styles.achievementLabel}>ASIC Chips</div>
+              </div>
+              <div className={styles.achievement}>
                 <div className={styles.achievementValue}>4</div>
-                <div className={styles.achievementLabel}>Chips Fabricated</div>
-              </div>
-              <div className={styles.achievement}>
-                <div className={styles.achievementValue}>2</div>
-                <div className={styles.achievementLabel}>Process Nodes</div>
-              </div>
-              <div className={styles.achievement}>
-                <div className={styles.achievementValue}>3</div>
                 <div className={styles.achievementLabel}>Publications</div>
               </div>
               <div className={styles.achievement}>
-                <div className={styles.achievementValue}>4.0</div>
-                <div className={styles.achievementLabel}>GPA</div>
+                <div className={styles.achievementValue}>8+</div>
+                <div className={styles.achievementLabel}>Years Experience</div>
               </div>
             </div>
           </motion.div>

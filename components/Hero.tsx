@@ -102,20 +102,16 @@ export default function Hero() {
 
         <motion.div className={styles.stats} variants={itemVariants}>
           <div className={styles.stat}>
-            <div className={styles.statValue}>4</div>
-            <div className={styles.statLabel}>Chips Fabricated</div>
+            <div className={styles.statValue}>10+</div>
+            <div className={styles.statLabel}>Industry-Level ASIC Chips</div>
           </div>
           <div className={styles.stat}>
-            <div className={styles.statValue}>3</div>
+            <div className={styles.statValue}>4</div>
             <div className={styles.statLabel}>Top-Tier Publications</div>
           </div>
           <div className={styles.stat}>
-            <div className={styles.statValue}>65nm</div>
-            <div className={styles.statLabel}>TSMC Process Node</div>
-          </div>
-          <div className={styles.stat}>
-            <div className={styles.statValue}>4.0</div>
-            <div className={styles.statLabel}>UofT GPA</div>
+            <div className={styles.statValue}>8+</div>
+            <div className={styles.statLabel}>Years Industry Experience</div>
           </div>
         </motion.div>
       </motion.div>

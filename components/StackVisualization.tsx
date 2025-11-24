@@ -13,7 +13,7 @@ export default function StackVisualization() {
       title: 'Layer 0: Silicon',
       description: 'ASIC Design & Hardware Acceleration',
       color: '#ff006e',
-      metrics: ['4 Chips Fabricated', 'TSMC 65nm/110nm', 'MAC Engines', 'Deflate Accelerators'],
+      metrics: ['10+ ASIC Chips', 'TSMC 65nm/110nm', 'MAC Engines', 'Deflate Accelerators'],
       icon: '⚙️'
     },
     {

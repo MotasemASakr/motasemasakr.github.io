@@ -29,15 +29,15 @@ export default function Layer3Impact() {
       role: 'Graduate Research, University of Toronto',
       period: 'Sep 2019 - July 2021',
       impact: [
-        '4 ASIC chips designed and fabricated to production',
+        '10+ ASIC chips designed and delivered to industry production',
         '3 publications in top-tier venues (ISSCC, JSSC, VLSI)',
         'Novel MAC and deflate accelerators with measurable performance gains',
         'Complete SoC design with ARM/RISCV microprocessors'
       ],
       metrics: [
-        { label: 'Chips', value: '4 Fabricated' },
+        { label: 'Chips', value: '10+ Fabricated' },
         { label: 'Publications', value: '3 Top-Tier' },
-        { label: 'GPA', value: '4.0/4.0' }
+        { label: 'Experience', value: '8+ Years' }
       ]
     },
     {
@@ -132,7 +132,7 @@ export default function Layer3Impact() {
                 <div className={styles.valuePointIcon}>⚙️</div>
                 <div className={styles.valuePointText}>
                   <strong>Hardware</strong>
-                  <span>4 chips fabricated, ASIC design expertise</span>
+                  <span>10+ chips fabricated, 8+ years industry experience in Mag 7</span>
                 </div>
               </div>
               <div className={styles.valuePoint}>

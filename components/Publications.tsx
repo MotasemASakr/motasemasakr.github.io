@@ -99,7 +99,7 @@ export default function Publications() {
           <div className={styles.highlightIcon}>🎓</div>
           <div className={styles.highlightContent}>
             <h3>Master of Applied Science in Electrical and Computer Engineering</h3>
-            <p>University of Toronto (UofT) • 2019 - 2021 • GPA: 4.0/4.0</p>
+            <p>University of Toronto (UofT) • 2019 - 2021 • 8+ Years Industry Experience</p>
             <p className={styles.thesis}>
               Thesis: <em>Hardware-Efficient Accelerators for Mask Generation in Coded-Exposure Cameras</em>
             </p>
