@@ -11,11 +11,11 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <Layer3Impact />
       <StackVisualization />
       <Layer0Silicon />
       <Layer1Models />
       <Layer2Agents />
-      <Layer3Impact />
       <Publications />
       <Contact />
     </main>

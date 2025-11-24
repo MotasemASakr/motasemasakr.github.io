@@ -69,12 +69,12 @@ export default function Layer3Impact() {
           transition={{ duration: 0.8 }}
         >
           <div className={styles.layerBadge} data-layer="3">
-            <span className={styles.badgeIcon}>📊</span>
-            <span className={styles.badgeText}>Layer 3</span>
+            <span className={styles.badgeIcon}>💼</span>
+            <span className={styles.badgeText}>Professional Journey</span>
           </div>
-          <h2 className={styles.title}>Impact & Outcomes</h2>
+          <h2 className={styles.title}>Experience & Impact</h2>
           <p className={styles.subtitle}>
-            Concrete business results, shipped systems, and measurable value delivered
+            Building the full stack from silicon to production AI systems
           </p>
         </motion.div>
 
