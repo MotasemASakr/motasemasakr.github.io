@@ -143,7 +143,7 @@ export default function Contact() {
       >
         <div className={styles.footerContent}>
           <p className={styles.footerText}>
-            © 2025 Motasem Sakr. Built with Next.js, Framer Motion, Three.js & GSAP.
+            © 2025 Motasem Sakr.
           </p>
           <p className={styles.footerTagline}>
             <span className={styles.footerIcon}>⚡</span>
