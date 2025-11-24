@@ -47,7 +47,7 @@ export default function Hero() {
       >
         <motion.div className={styles.badge} variants={itemVariants}>
           <span className={styles.badgeIcon}>⚡</span>
-          <span>Chip Design and AI Engineer</span>
+          <span>Chip Designer and AI Engineer</span>
         </motion.div>
 
         <motion.h1 className={styles.title} variants={itemVariants}>
