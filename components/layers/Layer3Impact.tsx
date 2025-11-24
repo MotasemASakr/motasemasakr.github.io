@@ -37,7 +37,7 @@ export default function Layer3Impact() {
       metrics: [
         { label: 'Chips', value: '10+ Fabricated' },
         { label: 'Publications', value: '3 Top-Tier' },
-        { label: 'Experience', value: '8+ Years' }
+        { label: 'Experience', value: '2 Years' }
       ]
     },
     {
@@ -132,7 +132,7 @@ export default function Layer3Impact() {
                 <div className={styles.valuePointIcon}>⚙️</div>
                 <div className={styles.valuePointText}>
                   <strong>Hardware</strong>
-                  <span>10+ chips fabricated, 8+ years industry experience in Mag 7</span>
+                  <span>10+ chips fabricated, 2 years silicon-to-software pipeline experience</span>
                 </div>
               </div>
               <div className={styles.valuePoint}>

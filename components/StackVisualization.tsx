@@ -72,6 +72,7 @@ export default function StackVisualization() {
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               whileHover={{ scale: 1.02, x: 10 }}
+              onClick={() => document.getElementById(`layer${layer.id}`)?.scrollIntoView({ behavior: 'smooth' })}
             >
               <div className={styles.layerHeader}>
                 <div className={styles.layerIcon}>{layer.icon}</div>

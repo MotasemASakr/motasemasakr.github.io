@@ -79,7 +79,7 @@ export default function Layer0Silicon() {
                 <div className={styles.achievementLabel}>Publications</div>
               </div>
               <div className={styles.achievement}>
-                <div className={styles.achievementValue}>8+</div>
+                <div className={styles.achievementValue}>2</div>
                 <div className={styles.achievementLabel}>Years Experience</div>
               </div>
             </div>

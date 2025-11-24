@@ -110,8 +110,8 @@ export default function Hero() {
             <div className={styles.statLabel}>Top-Tier Publications</div>
           </div>
           <div className={styles.stat}>
-            <div className={styles.statValue}>8+</div>
-            <div className={styles.statLabel}>Years Industry Experience</div>
+            <div className={styles.statValue}>2</div>
+            <div className={styles.statLabel}>Years Silicon-to-Software</div>
           </div>
         </motion.div>
       </motion.div>
