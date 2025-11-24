@@ -25,20 +25,25 @@ export default function Navigation() {
       
       // Update active section based on scroll position
       const sections = navItems.map(item => document.getElementById(item.id))
-      const scrollPos = window.scrollY + 200
+      const scrollPos = window.scrollY + window.innerHeight / 3
 
+      // Find the section that's currently most visible
+      let currentSection = 'hero'
       sections.forEach((section, index) => {
         if (section) {
           const offsetTop = section.offsetTop
           const offsetBottom = offsetTop + section.offsetHeight
 
           if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
-            setActiveSection(navItems[index].id)
+            currentSection = navItems[index].id
           }
         }
       })
+      
+      setActiveSection(currentSection)
     }
 
+    handleScroll() // Call once on mount
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
