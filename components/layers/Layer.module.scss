@@ -1,0 +1,668 @@
+.layer {
+  position: relative;
+  min-height: 100vh;
+  padding: 8rem 2rem;
+  overflow: hidden;
+
+  &[data-layer="0"] {
+    background: linear-gradient(180deg, var(--color-bg) 0%, rgba(255, 0, 110, 0.05) 100%);
+    
+    .layerBadge {
+      background: rgba(255, 0, 110, 0.1);
+      border-color: var(--layer-0);
+      color: var(--layer-0);
+    }
+  }
+
+  &[data-layer="1"] {
+    background: linear-gradient(180deg, rgba(255, 0, 110, 0.05) 0%, rgba(114, 9, 183, 0.05) 100%);
+    
+    .layerBadge {
+      background: rgba(114, 9, 183, 0.1);
+      border-color: var(--layer-1);
+      color: var(--layer-1);
+    }
+  }
+
+  &[data-layer="2"] {
+    background: linear-gradient(180deg, rgba(114, 9, 183, 0.05) 0%, rgba(58, 12, 163, 0.05) 100%);
+    
+    .layerBadge {
+      background: rgba(58, 12, 163, 0.1);
+      border-color: var(--layer-2);
+      color: var(--layer-2);
+    }
+  }
+
+  &[data-layer="3"] {
+    background: linear-gradient(180deg, rgba(58, 12, 163, 0.05) 0%, var(--color-bg) 100%);
+    
+    .layerBadge {
+      background: rgba(0, 255, 136, 0.1);
+      border-color: var(--layer-3);
+      color: var(--layer-3);
+    }
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.layerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.badgeIcon {
+  font-size: 1.5rem;
+}
+
+.badgeText {
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--color-text), var(--color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--color-text-dim);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.content {
+  position: relative;
+}
+
+.highlight {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.highlightHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+}
+
+.duration {
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+}
+
+.highlightText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-dim);
+  margin-bottom: 2rem;
+}
+
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+}
+
+.achievement {
+  text-align: center;
+}
+
+.achievementValue {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-mono);
+}
+
+.achievementLabel {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.project {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.projectTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.projectTech {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(0, 255, 136, 0.1);
+  color: var(--color-primary);
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.projectDescription {
+  font-size: 0.95rem;
+  color: var(--color-text-dim);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.projectMetrics {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.metric {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+}
+
+.experienceCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.experienceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.experienceTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.experienceCompany {
+  font-size: 1rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.experienceDescription {
+  font-size: 1rem;
+  color: var(--color-text-dim);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.experienceImpact,
+.experienceTech {
+  margin-top: 1.5rem;
+
+  h4 {
+    font-size: 0.85rem;
+    color: var(--color-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.impactTags,
+.techTags {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.impactTag,
+.techTag {
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 20px;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.agentSystems {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.agentCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.agentHeader {
+  display: flex;
+  align-items: start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.agentIcon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.agentTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.agentContext {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.agentDescription {
+  font-size: 1rem;
+  color: var(--color-text-dim);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.agentCapabilities,
+.agentStack {
+  margin-top: 1.5rem;
+
+  h4 {
+    font-size: 0.85rem;
+    color: var(--color-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.capabilityList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+.capability {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+}
+
+.capabilityIcon {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.stackTags {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.stackTag {
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  background: rgba(58, 12, 163, 0.2);
+  border: 1px solid rgba(58, 12, 163, 0.4);
+  border-radius: 20px;
+  color: var(--layer-2);
+  font-weight: 500;
+}
+
+.agentArchitecture {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.archTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.principle {
+  text-align: center;
+}
+
+.principleIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.principle h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+
+.principle p {
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  line-height: 1.6;
+}
+
+.impactCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.impactHeader {
+  margin-bottom: 1.5rem;
+}
+
+.impactTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.impactRole {
+  font-size: 1rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.impactPeriod {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+}
+
+.impactList {
+  margin-bottom: 1.5rem;
+}
+
+.impactItem {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: var(--color-text-dim);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.impactBullet {
+  color: var(--color-primary);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.impactMetrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.impactMetric {
+  text-align: center;
+}
+
+.metricValue {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-mono);
+  margin-bottom: 0.5rem;
+}
+
+.metricLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.valueProposition {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.valueTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.valueDescription {
+  font-size: 1.1rem;
+  color: var(--color-text-dim);
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.valuePoints {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.valuePoint {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  text-align: left;
+}
+
+.valuePointIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.valuePointText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  strong {
+    font-size: 1.1rem;
+    color: var(--color-text);
+  }
+
+  span {
+    font-size: 0.9rem;
+    color: var(--color-text-dim);
+  }
+}
+
+.techStack {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.techStackTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.techStackGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.techItem {
+  font-size: 0.85rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 20px;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-family: var(--font-mono);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(0, 255, 136, 0.2);
+    transform: translateY(-2px);
+  }
+}
+
+.bgDecor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.1;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.circuit,
+.neurons,
+.network,
+.graph {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100px 100px;
+  opacity: 0.3;
+}
+
+.circuit {
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255, 0, 110, 0.3) 51px),
+    repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255, 0, 110, 0.3) 51px);
+}
+
+@media (max-width: 768px) {
+  .layer {
+    padding: 4rem 1rem;
+  }
+
+  .highlight,
+  .agentCard,
+  .impactCard,
+  .valueProposition {
+    padding: 1.5rem;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .achievements,
+  .impactMetrics,
+  .valuePoints {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
