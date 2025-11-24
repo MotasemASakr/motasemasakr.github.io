@@ -1,5 +1,6 @@
 .section {
   padding: 3rem 2rem;
+  padding-bottom: 8rem;
   background: var(--color-bg);
   position: relative;
   overflow: visible;
@@ -21,8 +22,34 @@
     );
   }
   
-  @media (max-width: 768px) {
-    padding: 2rem 1rem;
+  /* Responsive spacing for different screen sizes */
+  @media (min-width: 2560px) {
+    padding: 4rem 3rem 10rem;
+  }
+  
+  @media (min-width: 1920px) and (max-width: 2559px) {
+    padding: 3.5rem 2.5rem 9rem;
+  }
+  
+  @media (min-width: 1440px) and (max-width: 1919px) {
+    padding: 3rem 2rem 8rem;
+  }
+  
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    padding: 3rem 2rem 7rem;
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    padding: 2.5rem 2rem 6rem;
+  }
+  
+  @media (max-width: 767px) {
+    padding: 2rem 1rem 5rem;
+  }
+  
+  /* Extra small screens (6 inch phones) */
+  @media (max-width: 375px) {
+    padding: 1.5rem 1rem 4rem;
   }
 }
 

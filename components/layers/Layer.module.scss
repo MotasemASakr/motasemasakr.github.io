@@ -2,7 +2,31 @@
   position: relative;
   min-height: auto;
   padding: 4rem 2rem;
+  padding-top: 6rem;
   overflow: hidden;
+  
+  /* Responsive top padding for different screen sizes */
+  @media (min-width: 2560px) {
+    padding-top: 8rem;
+  }
+  
+  @media (min-width: 1024px) and (max-width: 2559px) {
+    padding-top: 6rem;
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    padding-top: 5rem;
+  }
+  
+  @media (max-width: 767px) {
+    padding: 4rem 1.5rem;
+    padding-top: 4rem;
+  }
+  
+  @media (max-width: 375px) {
+    padding: 3rem 1rem;
+    padding-top: 3rem;
+  }
 
   &[data-layer="0"] {
     background: linear-gradient(180deg, var(--color-bg) 0%, rgba(255, 0, 110, 0.05) 100%);
