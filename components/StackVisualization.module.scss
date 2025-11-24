@@ -1,8 +1,8 @@
 .section {
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   background: var(--color-bg);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   min-height: auto;
 
   &::before {
@@ -19,6 +19,10 @@
       rgba(0, 255, 136, 0.2) 80%,
       transparent
     );
+  }
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
   }
 }
 
@@ -52,10 +56,14 @@
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--color-text-dim);
   max-width: 600px;
   margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 }
 
 .stack {
