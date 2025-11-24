@@ -39,18 +39,41 @@ body {
 
 main {
   margin-left: 320px;
+  width: calc(100% - 320px);
 }
 
-@media (max-width: 1024px) {
+/* Ultra-large screens (40 inch+, 2560px+) */
+@media (min-width: 2560px) {
   main {
-    margin-left: 130px;
+    margin-left: 380px;
+    width: calc(100% - 380px);
+    max-width: 2000px;
   }
 }
 
-@media (max-width: 768px) {
+/* Desktop/Laptop (1024px - 2560px) */
+@media (min-width: 1024px) and (max-width: 2559px) {
+  main {
+    margin-left: 320px;
+    width: calc(100% - 320px);
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  main {
+    margin-left: 130px;
+    width: calc(100% - 130px);
+  }
+}
+
+/* Mobile (6 inch screens - 768px) */
+@media (max-width: 767px) {
   main {
     margin-left: 0;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
+    width: 100%;
+    padding: 0 0.5rem;
   }
 }
 

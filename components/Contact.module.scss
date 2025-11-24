@@ -1,7 +1,11 @@
 .contact {
-  padding: 8rem 2rem 0;
+  padding: 4rem 2rem 0;
   background: linear-gradient(180deg, rgba(0, 255, 136, 0.03) 0%, var(--color-bg) 100%);
   position: relative;
+  
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem 0;
+  }
 }
 
 .container {

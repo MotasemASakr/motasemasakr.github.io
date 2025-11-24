@@ -1,7 +1,7 @@
 .layer {
   position: relative;
-  min-height: 100vh;
-  padding: 8rem 2rem;
+  min-height: auto;
+  padding: 4rem 2rem;
   overflow: hidden;
 
   &[data-layer="0"] {

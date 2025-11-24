@@ -1,8 +1,9 @@
 .section {
-  padding: 8rem 2rem;
+  padding: 4rem 2rem;
   background: var(--color-bg);
   position: relative;
   overflow: hidden;
+  min-height: auto;
 
   &::before {
     content: '';
@@ -25,6 +26,14 @@
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  
+  @media (min-width: 2560px) {
+    max-width: 1800px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
 }
 
 .header {

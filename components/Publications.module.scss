@@ -1,7 +1,11 @@
 .publications {
-  padding: 8rem 2rem;
+  padding: 4rem 2rem;
   background: linear-gradient(180deg, var(--color-bg) 0%, rgba(0, 255, 136, 0.03) 100%);
   position: relative;
+  
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
 }
 
 .container {

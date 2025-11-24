@@ -200,7 +200,22 @@
   }
 }
 
-@media (max-width: 1024px) {
+/* Large monitors (40 inch+) */
+@media (min-width: 2560px) {
+  .nav {
+    width: 320px;
+    left: 3rem;
+    top: 3rem;
+    bottom: 3rem;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
   .nav {
     width: 90px;
     left: 1rem;
