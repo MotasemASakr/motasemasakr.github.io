@@ -37,6 +37,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  margin-left: 320px;
+}
+
+@media (max-width: 1024px) {
+  main {
+    margin-left: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-left: 0;
+    margin-bottom: 100px;
+  }
+}
+
 ::selection {
   background: var(--color-primary);
   color: var(--color-bg);
