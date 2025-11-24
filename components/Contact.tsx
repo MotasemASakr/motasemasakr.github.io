@@ -3,31 +3,35 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import styles from './Contact.module.scss'
+import EmailIcon from './icons/EmailIcon'
+import LinkedInIcon from './icons/LinkedInIcon'
+import GitHubIcon from './icons/GitHubIcon'
+import LocationIcon from './icons/LocationIcon'
 
 export default function Contact() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 })
 
   const contactMethods = [
     {
-      icon: '📧',
+      icon: EmailIcon,
       label: 'Email',
       value: 'motasemsakr@gmail.com',
       link: 'mailto:motasemsakr@gmail.com'
     },
     {
-      icon: '💼',
+      icon: LinkedInIcon,
       label: 'LinkedIn',
       value: 'linkedin.com/in/motasem-sakr',
       link: 'https://www.linkedin.com/in/motasem-sakr/'
     },
     {
-      icon: '🐙',
+      icon: GitHubIcon,
       label: 'GitHub',
       value: 'github.com/MotasemASakr',
       link: 'https://github.com/MotasemASakr'
     },
     {
-      icon: '📍',
+      icon: LocationIcon,
       label: 'Location',
       value: 'Toronto, Canada',
       link: null
@@ -72,7 +76,9 @@ export default function Contact() {
               >
                 {method.link ? (
                   <a href={method.link} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-                    <div className={styles.contactIcon}>{method.icon}</div>
+                    <div className={styles.contactIcon}>
+                      <method.icon className={styles.iconSvg} />
+                    </div>
                     <div className={styles.contactInfo}>
                       <div className={styles.contactLabel}>{method.label}</div>
                       <div className={styles.contactValue}>{method.value}</div>
@@ -80,7 +86,9 @@ export default function Contact() {
                   </a>
                 ) : (
                   <div className={styles.contactLink}>
-                    <div className={styles.contactIcon}>{method.icon}</div>
+                    <div className={styles.contactIcon}>
+                      <method.icon className={styles.iconSvg} />
+                    </div>
                     <div className={styles.contactInfo}>
                       <div className={styles.contactLabel}>{method.label}</div>
                       <div className={styles.contactValue}>{method.value}</div>
