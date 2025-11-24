@@ -6,7 +6,6 @@ import styles from './Contact.module.scss'
 import EmailIcon from './icons/EmailIcon'
 import LinkedInIcon from './icons/LinkedInIcon'
 import GitHubIcon from './icons/GitHubIcon'
-import LocationIcon from './icons/LocationIcon'
 
 export default function Contact() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 })
@@ -29,12 +28,6 @@ export default function Contact() {
       label: 'GitHub',
       value: 'github.com/MotasemASakr',
       link: 'https://github.com/MotasemASakr'
-    },
-    {
-      icon: LocationIcon,
-      label: 'Location',
-      value: 'Toronto, Canada',
-      link: null
     }
   ]
 
