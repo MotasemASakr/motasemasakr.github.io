@@ -48,9 +48,9 @@ export default function Contact() {
             <span className={styles.badgeIcon}>🔌</span>
             <span>Interface</span>
           </div>
-          <h2 className={styles.title}>Let's Connect</h2>
+          <h2 className={styles.title}>Let&apos;s Connect</h2>
           <p className={styles.subtitle}>
-            Interested in full-stack AI systems? Let's talk about building the future.
+            Interested in full-stack AI systems? Let&apos;s talk about building the future.
           </p>
         </motion.div>
 
@@ -100,7 +100,7 @@ export default function Contact() {
             <h3 className={styles.ctaTitle}>Open to Opportunities</h3>
             <p className={styles.ctaText}>
               Seeking roles in AI infrastructure, hardware-aware ML, or agentic platform engineering.
-              Let's build systems that span silicon to agents.
+              Let&apos;s build systems that span silicon to agents.
             </p>
             <div className={styles.ctaButtons}>
               <motion.a
