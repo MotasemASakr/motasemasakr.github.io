@@ -88,8 +88,25 @@
 }
 
 .contactIcon {
-  font-size: 2.5rem;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.iconSvg {
+  width: 100%;
+  height: 100%;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.contactMethod:hover .iconSvg {
+  color: var(--color-secondary);
+  transform: scale(1.1);
 }
 
 .contactInfo {
