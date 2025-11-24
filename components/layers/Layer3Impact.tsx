@@ -37,7 +37,7 @@ export default function Layer3Impact() {
       metrics: [
         { label: 'Chips', value: '10+ Fabricated' },
         { label: 'Publications', value: '3 Top-Tier' },
-        { label: 'Experience', value: '7+ Years' }
+        { label: 'Experience', value: '2 Years' }
       ]
     },
     {
