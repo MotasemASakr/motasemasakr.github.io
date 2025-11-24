@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import styles from './Layer.module.scss'
+import ChipIcon from '../icons/ChipIcon'
 
 export default function Layer0Silicon() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 })
@@ -45,7 +46,9 @@ export default function Layer0Silicon() {
           transition={{ duration: 0.8 }}
         >
           <div className={styles.layerBadge} data-layer="0">
-            <span className={styles.badgeIcon}>💠</span>
+            <span className={styles.badgeIcon}>
+              <ChipIcon className={styles.badgeIconSvg} />
+            </span>
             <span className={styles.badgeText}>Layer 0</span>
           </div>
           <h2 className={styles.title}>Silicon & Hardware</h2>

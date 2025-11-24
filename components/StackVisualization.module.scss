@@ -176,10 +176,23 @@
 .layerIcon {
   font-size: 2.5rem;
   filter: grayscale(0.3);
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   @media (max-width: 768px) {
     font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
   }
+}
+
+.chipIconSvg {
+  width: 100%;
+  height: 100%;
+  color: var(--layer-color);
 }
 
 .layerInfo {

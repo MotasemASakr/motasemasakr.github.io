@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import styles from './StackVisualization.module.scss'
+import ChipIcon from './icons/ChipIcon'
 
 export default function StackVisualization() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 })
@@ -14,7 +15,7 @@ export default function StackVisualization() {
       description: 'ASIC Design & Hardware Acceleration',
       color: '#ff006e',
       metrics: ['10+ ASIC Chips', 'TSMC 65nm/110nm', 'MAC Engines', 'Deflate Accelerators'],
-      icon: '💠'
+      icon: 'chip'
     },
     {
       id: 1,
@@ -67,7 +68,13 @@ export default function StackVisualization() {
               onClick={() => document.getElementById(`layer${layer.id}`)?.scrollIntoView({ behavior: 'smooth' })}
             >
               <div className={styles.layerHeader}>
-                <div className={styles.layerIcon}>{layer.icon}</div>
+                <div className={styles.layerIcon}>
+                  {layer.icon === 'chip' ? (
+                    <ChipIcon className={styles.chipIconSvg} />
+                  ) : (
+                    layer.icon
+                  )}
+                </div>
                 <div className={styles.layerInfo}>
                   <h3 className={styles.layerTitle}>{layer.title}</h3>
                   <p className={styles.layerDescription}>{layer.description}</p>

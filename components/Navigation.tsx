@@ -3,12 +3,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Navigation.module.scss'
+import ChipIcon from './icons/ChipIcon'
 
 const navItems = [
   { id: 'hero', label: 'Context', layer: null, icon: '🎯' },
   { id: 'layer3', label: 'Experience', layer: null, icon: '💼' },
   { id: 'stack', label: 'Chip-Agent Stack', layer: null, icon: '📚' },
-  { id: 'layer0', label: 'Silicon', layer: 0, icon: '💠' },
+  { id: 'layer0', label: 'Silicon', layer: 0, icon: 'chip' },
   { id: 'layer1', label: 'Models', layer: 1, icon: '🧠' },
   { id: 'layer2', label: 'Agents', layer: 2, icon: '🤖' },
   { id: 'publications', label: 'Signals', layer: null, icon: '📡' },
@@ -81,7 +82,13 @@ export default function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className={styles.navIcon}>{item.icon}</span>
+              <span className={styles.navIcon}>
+                {item.icon === 'chip' ? (
+                  <ChipIcon className={styles.chipIconSvg} />
+                ) : (
+                  item.icon
+                )}
+              </span>
               {item.layer !== null && (
                 <span className={styles.layerIndicator} data-layer={item.layer}>
                   L{item.layer}
