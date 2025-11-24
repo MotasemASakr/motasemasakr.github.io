@@ -43,7 +43,7 @@ export default function StackVisualization() {
   ]
 
   return (
-    <section className={styles.section}>
+    <section id="stack" className={styles.section}>
       <div className={styles.container}>
         <motion.div
           className={styles.header}
