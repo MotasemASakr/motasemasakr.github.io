@@ -31,14 +31,6 @@ export default function StackVisualization() {
       color: '#3a0ca3',
       metrics: ['Research Assistant', 'Multi-Tool Agents', 'Production RAG', 'API Integration'],
       icon: '🤖'
-    },
-    {
-      id: 3,
-      title: 'Layer 3: Impact',
-      description: 'Business Outcomes & Scale',
-      color: '#00ff88',
-      metrics: ['AWS Cloud Scale', 'End-to-End Pipeline', 'Production Systems', 'CTO Leadership'],
-      icon: '📊'
     }
   ]
 
