@@ -5,14 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Navigation.module.scss'
 
 const navItems = [
-  { id: 'hero', label: 'Context', layer: null },
-  { id: 'layer3', label: 'Experience', layer: null },
-  { id: 'stack', label: 'Chip-Agent Stack', layer: null },
-  { id: 'layer0', label: 'Layer 0 · Silicon', layer: 0 },
-  { id: 'layer1', label: 'Layer 1 · Models', layer: 1 },
-  { id: 'layer2', label: 'Layer 2 · Agents', layer: 2 },
-  { id: 'publications', label: 'Signals', layer: null },
-  { id: 'contact', label: 'Interface', layer: null },
+  { id: 'hero', label: 'Context', layer: null, icon: '🎯' },
+  { id: 'layer3', label: 'Experience', layer: null, icon: '💼' },
+  { id: 'stack', label: 'Chip-Agent Stack', layer: null, icon: '📚' },
+  { id: 'layer0', label: 'Layer 0 · Silicon', layer: 0, icon: '⚙️' },
+  { id: 'layer1', label: 'Layer 1 · Models', layer: 1, icon: '🧠' },
+  { id: 'layer2', label: 'Layer 2 · Agents', layer: 2, icon: '🤖' },
+  { id: 'publications', label: 'Signals', layer: null, icon: '📡' },
+  { id: 'contact', label: 'Interface', layer: null, icon: '🔌' },
 ]
 
 export default function Navigation() {
@@ -80,6 +80,7 @@ export default function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
+              <span className={styles.navIcon}>{item.icon}</span>
               {item.layer !== null && (
                 <span className={styles.layerIndicator} data-layer={item.layer}>
                   L{item.layer}

@@ -63,7 +63,8 @@
   }
 
   &[data-layer="3"] {
-    background: linear-gradient(180deg, rgba(58, 12, 163, 0.05) 0%, var(--color-bg) 100%);
+    background: linear-gradient(180deg, var(--color-bg) 0%, rgba(0, 255, 136, 0.03) 100%);
+    padding-top: 4rem;
     
     .layerBadge {
       background: rgba(0, 255, 136, 0.1);
