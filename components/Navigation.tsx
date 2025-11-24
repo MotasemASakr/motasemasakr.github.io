@@ -8,7 +8,7 @@ import ChipIcon from './icons/ChipIcon'
 const navItems = [
   { id: 'hero', label: 'Context', layer: null, icon: '🎯' },
   { id: 'layer3', label: 'Experience', layer: null, icon: '💼' },
-  { id: 'stack', label: 'Chip-Agent Stack', layer: null, icon: '📚' },
+  { id: 'stack', label: 'Chip-Agent Stack', layer: null, icon: '🏗️' },
   { id: 'layer0', label: 'Silicon', layer: 0, icon: 'chip' },
   { id: 'layer1', label: 'Models', layer: 1, icon: '🧠' },
   { id: 'layer2', label: 'Agents', layer: 2, icon: '🤖' },
