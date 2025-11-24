@@ -67,9 +67,10 @@ export default function Hero() {
             <motion.div
               key={index}
               className={styles.pillar}
-              style={{ '--pillar-color': pillar.color } as React.CSSProperties}
+              style={{ '--pillar-color': pillar.color, cursor: 'pointer' } as React.CSSProperties}
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ duration: 0.3 }}
+              onClick={() => document.getElementById(`layer${pillar.layer}`)?.scrollIntoView({ behavior: 'smooth' })}
             >
               <div className={styles.pillarLayer}>L{pillar.layer}</div>
               <div className={styles.pillarContent}>
