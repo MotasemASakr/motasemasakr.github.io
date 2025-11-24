@@ -72,27 +72,21 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                whileHover={{ y: -5 }}
+                whileHover={{ scale: 1.1 }}
               >
                 {method.link ? (
-                  <a href={method.link} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-                    <div className={styles.contactIcon}>
-                      <method.icon className={styles.iconSvg} />
-                    </div>
-                    <div className={styles.contactInfo}>
-                      <div className={styles.contactLabel}>{method.label}</div>
-                      <div className={styles.contactValue}>{method.value}</div>
-                    </div>
+                  <a 
+                    href={method.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.iconOnlyLink}
+                    title={`${method.label}: ${method.value}`}
+                  >
+                    <method.icon className={styles.iconSvg} />
                   </a>
                 ) : (
-                  <div className={styles.contactLink}>
-                    <div className={styles.contactIcon}>
-                      <method.icon className={styles.iconSvg} />
-                    </div>
-                    <div className={styles.contactInfo}>
-                      <div className={styles.contactLabel}>{method.label}</div>
-                      <div className={styles.contactValue}>{method.value}</div>
-                    </div>
+                  <div className={styles.iconOnlyLink} title={`${method.label}: ${method.value}`}>
+                    <method.icon className={styles.iconSvg} />
                   </div>
                 )}
               </motion.div>
