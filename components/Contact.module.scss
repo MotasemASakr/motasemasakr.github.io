@@ -220,8 +220,13 @@
 
 .footer {
   border-top: 1px solid rgba(0, 255, 136, 0.1);
-  padding: 3rem 2rem;
-  margin-top: 4rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
 }
 
 .footerContent {
