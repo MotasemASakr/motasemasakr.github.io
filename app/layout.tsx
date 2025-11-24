@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import SmoothScroll from '@/components/SmoothScroll'
 import Navigation from '@/components/Navigation'
+import AuthGate from '@/components/AuthGate'
 
 export const metadata: Metadata = {
   title: 'Motasem Sakr - Chip-to-Agent Stack',
@@ -17,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SmoothScroll>
-          <Navigation />
-          {children}
-        </SmoothScroll>
+        <AuthGate>
+          <SmoothScroll>
+            <Navigation />
+            {children}
+          </SmoothScroll>
+        </AuthGate>
       </body>
     </html>
   )
